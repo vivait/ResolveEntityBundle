@@ -1,0 +1,21 @@
+{
+	"name": "vivait/resolve-entity-bundle",
+	"description": "Resolve Entity Bundle",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Lewis Wright",
+			"email": "lewis@vivait.co.uk"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+
+	},
+	"autoload": {
+		"psr-0": {
+			"Vivait\\ResolveEntityBundle": ""
+		}
+	},
+	"target-dir": "Vivait/ResolveEntityBundle"
+}

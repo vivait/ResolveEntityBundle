@@ -3,6 +3,7 @@
 namespace Vivait\ResolveEntityBundle\ParamConverter;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter;
 use Vivait\ResolveEntityBundle\Service\EntityMapService;
 
@@ -19,6 +20,10 @@ class ResolveParamConverter extends DoctrineParamConverter {
 	}
 
 	public function resolveClass($class) {
+		if ($class === null) {
+			return $class;
+		}
+
 		// Check for namespace alias
 		if (strpos($class, ':') !== false) {
 			list($namespaceAlias, $simpleClassName) = explode(':', $class);
@@ -26,6 +31,15 @@ class ResolveParamConverter extends DoctrineParamConverter {
 		}
 
 		return $this->entity_map->get($class, $class);
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function supports(ParamConverter $configuration) {
+		$configuration->setClass($this->resolveClass($configuration->getClass()));
+
+		return parent::supports($configuration);
 	}
 
 	protected function getManager($name, $class) {

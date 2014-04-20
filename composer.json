@@ -23,6 +23,5 @@
 		"psr-0": {
 			"Vivait\\ResolveEntityBundle": ""
 		}
-	},
-	"target-dir": "Vivait\\ResolveEntityBundle"
+	}
 }

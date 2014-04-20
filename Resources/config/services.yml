@@ -1,9 +1,0 @@
-parameters:
-    resolve_entity_type_extension.class: Vivait\ResolveEntityBundle\Form\Extension\ResolveEntityTypeExtension
-
-services:
-    vivait_resolve_entity.resolve_entity_type_extension:
-        class: '%resolve_entity_type_extension.class%'
-        arguments: [@doctrine]
-        tags:
-            - { name: form.type_extension, alias: entity }

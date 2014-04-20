@@ -10,12 +10,19 @@
 	],
 	"minimum-stability": "stable",
 	"require": {
-
+		"php": ">=5.3",
+		"symfony/framework-bundle": "~2.1",
+		"symfony/form": "~2.1",
+		"doctrine/common": ">=2.2"
+	},
+	"require-dev": {
+		"sensio/framework-extra-bundle": ">=2.1",
+		"phpspec/phpspec": "*"
 	},
 	"autoload": {
 		"psr-0": {
 			"Vivait\\ResolveEntityBundle": ""
 		}
 	},
-	"target-dir": "Vivait/ResolveEntityBundle"
+	"target-dir": "Vivait\\ResolveEntityBundle"
 }

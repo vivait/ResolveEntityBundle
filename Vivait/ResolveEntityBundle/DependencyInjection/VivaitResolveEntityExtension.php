@@ -22,7 +22,6 @@ class VivaitResolveEntityExtension extends Extension implements PrependExtension
 				]
 			];
 
-			//var_dump($config);
 			$container->prependExtensionConfig('doctrine', $config);
 		}
 	}
@@ -38,9 +37,9 @@ class VivaitResolveEntityExtension extends Extension implements PrependExtension
 		$loader->load('services.yml');
 
 		if ($config['resolve_target_entities']) {
-			$def = $container->findDefinition('vivait_resolve_entity.resolve_entity_type_extension');
+			$def = $container->findDefinition('vivait_resolve_entity.entity_map_service');
 			foreach ($config['resolve_target_entities'] as $name => $implementation) {
-				$def->addMethodCall('addResolveTargetEntity', array(
+				$def->addMethodCall('add', array(
 					$name, $implementation
 				));
 			}

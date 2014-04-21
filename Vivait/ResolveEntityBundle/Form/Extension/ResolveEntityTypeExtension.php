@@ -19,7 +19,7 @@ class ResolveEntityTypeExtension extends AbstractTypeExtension {
 	 */
 	protected $entity_map;
 
-	function __construct($registry, $entity_map) {
+	public function __construct($registry, $entity_map) {
 		$this->registry   = $registry;
 		$this->entity_map = $entity_map;
 	}

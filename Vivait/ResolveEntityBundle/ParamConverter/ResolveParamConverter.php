@@ -37,16 +37,17 @@ class ResolveParamConverter extends DoctrineParamConverter {
 	 * {@inheritdoc}
 	 */
 	public function supports(ParamConverter $configuration) {
-		$configuration->setClass($this->resolveClass($configuration->getClass()));
+		$original_class = $configuration->getClass();
+		// Replace the class with our resolved class
+		$configuration->setClass($this->resolveClass($original_class));
 
-		return parent::supports($configuration);
-	}
-
-	protected function getManager($name, $class) {
-		if (null === $name) {
-			return $this->registry->getManagerForClass($this->resolveClass($class));
+		if (parent::supports($configuration)) {
+			return true;
 		}
-
-		return $this->registry->getManager($name);
+		else {
+			// Reset our changes
+			$configuration->setClass($original_class);
+			return false;
+		}
 	}
 } 

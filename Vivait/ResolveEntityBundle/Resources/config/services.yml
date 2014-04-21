@@ -1,7 +1,7 @@
 parameters:
     resolve_entity_type_extension.class: Vivait\ResolveEntityBundle\Form\Extension\ResolveEntityTypeExtension
     entity_map_service.class:            Vivait\ResolveEntityBundle\Service\EntityMapService
-    doctrine_param_converter.class:      Vivait\ResolveEntityBundle\ParamConverter\ResolveParamConverter
+    resolve_param_converter.class:      Vivait\ResolveEntityBundle\ParamConverter\ResolveParamConverter
 
 services:
     vivait_resolve_entity.resolve_entity_type_extension:
@@ -12,8 +12,8 @@ services:
 
     vivait_resolve_entity.entity_map_service:
         class: '%entity_map_service.class%'
-#
-#    vivait_resolve_entity.resolve_param_converter:
-#        class: '%resolve_param_converter.class%'
-#        tags:
-#            - { name: request.param_converter, priority: -2, converter: resolve_entity_resolve_converter }
+
+    vivait_resolve_entity.resolve_param_converter:
+        class: '%resolve_param_converter.class%'
+        tags:
+            - { name: request.param_converter, priority: -2, converter: resolve_entity_resolve_converter }

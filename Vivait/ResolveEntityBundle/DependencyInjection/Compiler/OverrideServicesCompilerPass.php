@@ -11,6 +11,7 @@ class OverrideServicesCompilerPass implements CompilerPassInterface {
 		try {
 			$definition = $container->getDefinition('sensio_framework_extra.converter.doctrine.orm');
 			$definition->setClass('Vivait\ResolveEntityBundle\ParamConverter\ResolveParamConverter');
+			$definition->addArgument(new Reference('vivait_resolve_entity.entity_map_service'));
 		}
 		catch (InvalidArgumentException $e) {
 

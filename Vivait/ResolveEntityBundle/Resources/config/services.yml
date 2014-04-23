@@ -6,7 +6,7 @@ parameters:
 services:
     vivait_resolve_entity.resolve_entity_type_extension:
         class: '%resolve_entity_type_extension.class%'
-        arguments: [@doctrine]
+        arguments: ["@doctrine", "@vivait_resolve_entity.entity_map_service"]
         tags:
             - { name: form.type_extension, alias: entity }
 
@@ -15,6 +15,6 @@ services:
 
     vivait_resolve_entity.resolve_param_converter:
         class: '%resolve_param_converter.class%'
-        arguments: [@doctrine, @vivait_resolve_entity.entity_map_service]
+        arguments: ["@doctrine", "@vivait_resolve_entity.entity_map_service"]
         tags:
             - { name: request.param_converter, priority: -2, converter: resolve_entity_resolve_converter }

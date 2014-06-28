@@ -41,7 +41,7 @@ class EntityMapService {
 
 	/**
 	 * @param $entity
-	 * @param null $default
+	 * @param mixed $default
 	 * @return null
 	 */
 	public function get($entity, $default = null) {

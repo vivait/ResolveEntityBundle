@@ -19,6 +19,11 @@ class ResolveParamConverter extends DoctrineParamConverter {
 		$this->entity_map = $entity_map;
 	}
 
+	/**
+	 * @param string $class
+	 *
+	 * @return string
+	 */
 	public function resolveClass($class) {
 		if ($class === null) {
 			return $class;

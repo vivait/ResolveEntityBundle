@@ -5,7 +5,7 @@ namespace Vivait\ResolveEntityBundle\Form\Extension;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\OptionsResolver\Options;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vivait\ResolveEntityBundle\Service\EntityMapService;
 
 class ResolveEntityTypeExtension extends AbstractTypeExtension {
@@ -24,7 +24,7 @@ class ResolveEntityTypeExtension extends AbstractTypeExtension {
 		$this->entity_map = $entity_map;
 	}
 
-	public function setDefaultOptions(OptionsResolverInterface $resolver) {
+	public function setDefaultOptions(OptionsResolver $resolver) {
 		$entity_map = $this->entity_map;
 		$registry   = $this->registry;
 
@@ -38,9 +38,7 @@ class ResolveEntityTypeExtension extends AbstractTypeExtension {
 			return $entity_map->get($class, $class);
 		};
 
-		$resolver->setNormalizers(array(
-			'class' => $classNormalizer
-		));
+		$resolver->setNormalizer('class', $classNormalizer);
 	}
 
 	/**

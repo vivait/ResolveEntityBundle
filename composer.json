@@ -9,16 +9,16 @@
 		}
 	],
 	"minimum-stability": "dev",
-        "prefer-stable": true,
+	"prefer-stable": true,
 	"require": {
-		"php": ">=5.3",
-		"symfony/framework-bundle": "~2.1",
-		"symfony/form": "~2.1",
-		"doctrine/common": ">=2.2"
+		"php": ">=7.1",
+		"doctrine/common": ">=2.2",
+		"symfony/framework-bundle": "^3.4",
+		"symfony/form": "^3.4"
 	},
 	"require-dev": {
-		"sensio/framework-extra-bundle": ">=2.1",
-		"phpspec/phpspec": "~2.0"
+		"sensio/framework-extra-bundle": "^5.2",
+		"phpspec/phpspec": "^5.1"
 	},
 	"autoload": {
 		"psr-0": {

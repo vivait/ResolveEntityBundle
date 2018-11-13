@@ -18,6 +18,7 @@
 	},
 	"require-dev": {
 		"sensio/framework-extra-bundle": "^5.2",
+		"sebastian/comparator": "^1.2.4",
 		"phpspec/phpspec": "^5.1"
 	},
 	"autoload": {

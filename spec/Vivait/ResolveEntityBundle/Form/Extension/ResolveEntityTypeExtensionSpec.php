@@ -5,7 +5,7 @@ namespace spec\Vivait\ResolveEntityBundle\Form\Extension;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vivait\ResolveEntityBundle\Form\Extension\ResolveEntityTypeExtension;
 use Vivait\ResolveEntityBundle\Service\EntityMapService;
 
@@ -27,8 +27,8 @@ class ResolveEntityTypeExtensionSpec extends ObjectBehavior {
 			->shouldReturn('entity');
 	}
 
-	function it_should_register_a_custom_normalizer(OptionsResolverInterface $resolver) {
-		$resolver->setNormalizers(Argument::any())
+	function it_should_register_a_custom_normalizer(OptionsResolver $resolver) {
+		$resolver->setNormalizer('class', Argument::any())
 			->shouldBeCalled();
 
 		$this->setDefaultOptions($resolver);

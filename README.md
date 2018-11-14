@@ -1,5 +1,5 @@
 ResolveEntityBundle
 ===================
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vivait/ResolveEntityBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vivait/ResolveEntityBundle/?branch=master)
+[![Build Status](https://travis-ci.org/vivait/ResolveEntityBundle.svg?branch=master)](https://travis-ci.org/vivait/ResolveEntityBundle)
 
 Extends Symfony's entity manager form type to handle Doctrine's resolved entities

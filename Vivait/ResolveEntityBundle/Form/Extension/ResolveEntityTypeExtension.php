@@ -3,6 +3,7 @@
 namespace Vivait\ResolveEntityBundle\Form\Extension;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -47,6 +48,6 @@ class ResolveEntityTypeExtension extends AbstractTypeExtension {
 	 * @return string The name of the type being extended
 	 */
 	public function getExtendedType() {
-		return 'entity';
+		return EntityType::class;
 	}
 }

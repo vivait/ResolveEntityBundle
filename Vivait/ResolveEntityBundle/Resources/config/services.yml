@@ -1,14 +1,14 @@
 parameters:
     resolve_entity_type_extension.class: Vivait\ResolveEntityBundle\Form\Extension\ResolveEntityTypeExtension
-    entity_map_service.class:            Vivait\ResolveEntityBundle\Service\EntityMapService
-    resolve_param_converter.class:      Vivait\ResolveEntityBundle\ParamConverter\ResolveParamConverter
+    entity_map_service.class: Vivait\ResolveEntityBundle\Service\EntityMapService
+    resolve_param_converter.class: Vivait\ResolveEntityBundle\ParamConverter\ResolveParamConverter
 
 services:
     vivait_resolve_entity.resolve_entity_type_extension:
         class: '%resolve_entity_type_extension.class%'
         arguments: ["@doctrine", "@vivait_resolve_entity.entity_map_service"]
         tags:
-            - { name: form.type_extension, alias: entity }
+            - { name: form.type_extension, extended_type: Symfony\Bridge\Doctrine\Form\Type\EntityType }
 
     vivait_resolve_entity.entity_map_service:
         class: '%entity_map_service.class%'

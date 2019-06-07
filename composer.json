@@ -15,7 +15,7 @@
 		"doctrine/common": ">=2.2",
 		"symfony/framework-bundle": "^3.4",
 		"symfony/form": "^3.4",
-		"symfony/doctrine-bridge": "^4.1"
+		"symfony/doctrine-bridge": "^v3.4|^4.1"
 	},
 	"require-dev": {
 		"sensio/framework-extra-bundle": "^5.2",
